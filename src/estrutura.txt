@@ -1,0 +1,54 @@
+JSON
+"writer": {
+    "name": "Clarice Lispector",
+    "Birth": {
+      "birth date": "10/12/1920",
+      "city": "Chechelnyk",
+      "country": "Ucrânia"
+    },
+    "Death": {
+      "death date": "09/12/1977",
+      "city": "Rio de janeiro",
+      "country": "Brasil"
+    },
+    "Work": [
+      "Perto do Coração Selvagem",
+      "O Lustre",
+      "A Cidade Sitiada",
+      "A Maçã no Escuro",
+      "A Paixão segundo G.H.",
+      "Uma Aprendizagem ou O Livro dos Prazeres",
+      "Água Viva",
+      "A Hora da Estrela",
+      "Um Sopro de Vida"
+    ]
+}
+
+MERMAID
+classDiagram
+class Writer {
+- String name
+- Birth birth
+- Death death
+- Work[] works
+}
+
+class Birth {
+- Date birth_date
+- String city
+- String country
+}
+
+class Death {
+- Date death_date
+- String city
+- String country
+}
+
+class Work {
+- String title
+}
+
+Writer "1" *-- "1" Birth
+Writer "1" *-- "1" Death
+Writer "1" *-- "0..*" Work
